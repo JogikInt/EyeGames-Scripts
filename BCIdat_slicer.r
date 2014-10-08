@@ -1,4 +1,4 @@
-prepare.matlab <- function(filename)
+prepare.matlab <- function(filename, outname)
 #####################################################################################
 #prepare.matlab takes uncut BCI2000 .dat file from e1 experiment and returns .mat file
 #with cut record in data variable.
@@ -31,5 +31,5 @@ for (m in (1:length(marks)))
   }
 
 #saving to .mat file
-writeMat(sprintf("%s.mat", filename), data = datares)
+writeMat(sprintf("%s.mat", outname), data = datares)
 }
