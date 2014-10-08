@@ -1,6 +1,7 @@
 prepare_matlab <- function(filename)
 {
 library(bcidat)
+library(R.matlab)
 
 file <- load_bcidat(filename);
 data <- file$signal;
@@ -20,6 +21,7 @@ for (m in (1:length(marks)))
       break
       }
   }
-return(datares)
+#return(datares)
+# matname = 
+writeMat(sprintf("%s.mat", filename), data = datares)
 }
-
