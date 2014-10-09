@@ -5,7 +5,7 @@ cycle.dat <- function(csv2file)
 #folders "wd/experiment_number/fixation_latency
 #####################################################################################
 {
-  source('D:/BCILab/my_progs/BCIdat_slicer.r')
+  source('D:/BCILab/EyeGames-Scripts/BCIdat_slicer.r')
   
   records <- read.csv2(csv2file)
   for (n in 1:length(records$X1200ms))
@@ -15,6 +15,7 @@ cycle.dat <- function(csv2file)
     name <- sprintf("%s", records$X1200ms[n])
     dirname <- sprintf("%s%s", folder, name)
     prepare.matlab(name, dirname)
+    file.copy(sprintf("FixLatencies%s.ascii", records$X[n]), folder)
   }
   for (n in 1:length(records$X800ms))
   {
@@ -23,5 +24,6 @@ cycle.dat <- function(csv2file)
     name <- sprintf("%s", records$X800ms[n])
     dirname <- sprintf("%s%s", folder, name)
     prepare.matlab(name, dirname)
+    file.copy(sprintf("FixLatencies%s.ascii", records$X.1[n]), folder)
   }
 }
