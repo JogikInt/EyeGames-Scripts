@@ -1,4 +1,4 @@
-##sepRuns separates data from csv file by runs
+##sepRuns separates data from unsorted csv file by runs
 sepRuns <- function(data, nruns = 8) {
         
         runStart <- 1
