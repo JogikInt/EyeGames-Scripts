@@ -55,7 +55,7 @@ interevent.times <- function(separated, nruns = 8, time = "BCBP") {
 
 ##sepRunTimes receives csv file name and performs sepRuns nad interevent.times on it
 sepRunTimes <- function(filename, nruns = 8, time = "BCBP") {
-        data <- read.csv2(file = filename, col.names = c('BC', 'BP', 'BM'), header = FALSE)
+        data <- read.csv(file = filename, col.names = c('BC', 'BP', 'BM'), header = FALSE)
         separated <- sepRuns(data, nruns)
         interevent.times <- interevent.times(separated, nruns, time)
 }
